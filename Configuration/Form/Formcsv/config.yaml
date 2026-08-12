@@ -1,0 +1,67 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              formEditor:
+                editors:
+                  900:
+                    selectOptions:
+                      35083035442:
+                        value: "CsvFinisher"
+                        label: "CSV File Generator"
+
+                propertyCollections:
+                  finishers:
+                    35083035442:
+                      identifier: "CsvFinisher"
+                      editors:
+                        100:
+                          identifier: header
+                          templateName: Inspector-CollectionElementHeaderEditor
+                          label: "CSV File Generator"
+                        200:
+                          identifier: "filename"
+                          templateName: "Inspector-TextEditor"
+                          label: "CSV Filename"
+                          propertyPath: "options.filename"
+                        300:
+                          identifier: "excludeFields"
+                          templateName: "Inspector-TextEditor"
+                          label: "Fields to Exclude"
+                          propertyPath: "options.excludeFields"
+                          enableFormelementSelectionButton: true
+                        350:
+                          identifier: "attachToReceiver"
+                          templateName: "Inspector-CheckboxEditor"
+                          label: "Attach to Receiver Mail (EmailToReceiver)"
+                          propertyPath: "options.attachToReceiver"
+                        360:
+                          identifier: "attachToSender"
+                          templateName: "Inspector-CheckboxEditor"
+                          label: "Attach to Sender Mail (EmailToSender)"
+                          propertyPath: "options.attachToSender"
+                        9999:
+                          identifier: removeButton
+                          templateName: Inspector-RemoveElementEditor
+
+          finishersDefinition:
+            CsvFinisher:
+              implementationClassName: 'Brightside\Formcsv\Domain\Finishers\CsvFinisher'
+              options:
+                filename: "submission.csv"
+                excludeFields: ""
+                attachToReceiver: true
+                attachToSender: false
+
+              formEditor:
+                label: "CSV File Generator"
+                iconIdentifier: "form-finisher"
+                predefinedDefaults:
+                  options:
+                    filename: "submission.csv"
+                    excludeFields: ""
+                    attachToReceiver: true
+                    attachToSender: false

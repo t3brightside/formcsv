@@ -1,0 +1,20 @@
+{
+  "name": "t3brightside/formcsv",
+  "type": "typo3-cms-extension",
+  "description": "TYPO3 v14 Form Finisher to generate and attach a custom mapped CSV file to email finishers.",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "typo3/cms-core": "^14.3",
+    "typo3/cms-form": "^14.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brightside\\Formcsv\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "formcsv"
+    }
+  }
+}

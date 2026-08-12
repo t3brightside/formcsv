@@ -1,0 +1,4 @@
+name: t3brightside/formcsv
+label: "Form CSV"
+dependencies:
+  - typo3/form
